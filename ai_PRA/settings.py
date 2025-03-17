@@ -77,6 +77,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ai_PRA.wsgi.application'
 
 
+# Custom User Model
+AUTH_USER_MODEL = 'users.CustomUser'
+
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
