@@ -20,5 +20,5 @@ from users import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(urls))
+    path('api/users/', include(urls))
 ]
