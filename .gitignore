@@ -1,4 +1,6 @@
 db.sqlite3
 .venv
+myvenv
 __pycache__
 *.pyc
+.idea
