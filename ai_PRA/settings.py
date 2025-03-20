@@ -26,9 +26,9 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -88,7 +88,7 @@ DATABASES = {
 }
 
 # Redis Settings
-CELERY_BROKER_URL = 'rediss://:pd46ed8ba41ce760d959882983bc6759923378ee772983ddd5bf369e9dbaa7944@ec2-52-49-30-212.eu-west-1.compute.amazonaws.com:12970'
+CELERY_BROKER_URL = os.environ.get('REDIS_URL')
 
 # Rest Framework
 REST_FRAMEWORK = {
