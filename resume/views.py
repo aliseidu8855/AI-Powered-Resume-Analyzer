@@ -2,7 +2,6 @@ from rest_framework import generics, permissions
 from .models import Resume
 from .serializers import ResumeSerializer
 
-# Create your views here.
 
 class ResumeUploadView(generics.ListCreateAPIView):
     queryset = Resume.objects.all()

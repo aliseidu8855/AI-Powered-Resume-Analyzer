@@ -17,21 +17,20 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-47dgijh*_b!l$!pm=!n_ajels0f*!v3)463bz-^(5dyfa+3fv6'
+SECRET_KEY = (
+    'django-insecure-47dgijh*_b!l$!pm=!n_ajels0f*!v3)463bz-^(5dyfa+3fv6'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'resume',
     'users',
-    'analysis'
+    'analysis',
 ]
 
 MIDDLEWARE = [
@@ -76,10 +75,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ai_PRA.wsgi.application'
 
-
 # Custom User Model
 AUTH_USER_MODEL = 'users.CustomUser'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -90,6 +87,9 @@ DATABASES = {
     )
 }
 
+# Redis Settings
+CELERY_BROKER_URL = 'rediss://:pd46ed8ba41ce760d959882983bc6759923378ee772983ddd5bf369e9dbaa7944@ec2-52-49-30-212.eu-west-1.compute.amazonaws.com:12970'
+
 # Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -97,28 +97,34 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.NumericPasswordValidator'
+        ),
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -130,7 +136,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

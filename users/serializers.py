@@ -5,10 +5,12 @@ from rest_framework_simplejwt.tokens import Token
 
 User = get_user_model()
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'bio', 'date_of_birth']
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
